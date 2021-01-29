@@ -7,7 +7,11 @@ const {check, validationResult } =require('express-validator');
 
 // for customer password encryption 
 const bcryptjs =require('bcryptjs');
+const jwt =require('jsonwebtoken')
+
 const { find } = require('../models/customer_model');
+const { JsonWebTokenError } = require('jsonwebtoken');
+
 
 //insert operation 
 
@@ -60,6 +64,8 @@ router.post("/insert", [
       const  custo_name = req.body.custo_name;
       const  custo_password =req.body.custo_password; // sent from user
 
+
+      //check user name valid
       Customer.findOne({custo_name:custo_name})
       .then(function(customerdata){
 
@@ -73,10 +79,22 @@ router.post("/insert", [
 
             return res.status(403).json({message : " customername/password not valid!!!"})
              }
-             res.send("corrected!!!")
+
+             //  username and password is valid
+             //token generate
+
+            const token = jwt.sign({customerId:customerdata._id}, 'secretkey')
+            res.status(200).json({
+                token :token,
+                message :"auth sucsess!!"
+            })
+
+
          })
 
-      }).catch()
+      }).catch(function(e){
+          res.status(500).json({Error :e});
+      })
       
      })
 
