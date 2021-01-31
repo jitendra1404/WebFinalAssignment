@@ -27,6 +27,11 @@ const Customer =mongoose.model('Customer', {
     custo_password : {
         type : String,
         required:true
+    }, 
+    usertype : {
+        type :String,
+        enum : ['Admin', 'Customer'],
+        default : 'Customer'
     }
 
 })
