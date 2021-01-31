@@ -2,16 +2,13 @@ const mongoose =require('mongoose')
 
 const CustomerFeedback =mongoose.model('customerfeedback', {
 
-    service_name : {
+    feedback_title : {
         type : String
     },
 
-    service_discrption : {
+    feedback_discrption : {
         type :String
-    },
-    service_
-
-    
-
+    }
+   
 })
-
+ module.exports=CustomerFeedback;

@@ -11,11 +11,13 @@ const jwt =require('jsonwebtoken')
 
 const { find } = require('../models/customer_model');
 const { JsonWebTokenError } = require('jsonwebtoken');
+const auth = require('../middlewear/Auth')
 
 
 //insert operation 
 
-router.post("/insert", [ 
+
+router.post("/insert",  auth.verifyuser, [ 
     check('custo_name', 'Customer Username is required!').not().isEmpty(),
     check('custo_address', 'Customer address is required!').not().isEmpty(),
     check('custo_mobile', 'Customer mobile number is required!').not().isEmpty(),
@@ -58,8 +60,9 @@ router.post("/insert", [
     }
 
      })
-            // data fetch
-     router.get("/login", function(req,res){
+            // data fetch 
+            // username - kiran , password - abc
+     router.post("/login", function(req,res){
 
       const  custo_name = req.body.custo_name;
       const  custo_password =req.body.custo_password; // sent from user
