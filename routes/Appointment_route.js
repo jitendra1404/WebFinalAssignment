@@ -4,6 +4,7 @@ const router=express.Router();
 
 
 router.post("/insert6", function(req,res) {
+     
 const device_name =req.body.device_name;
 const device_model =req.body.device_model;
 const appointment_date =req.body.appointment_date;

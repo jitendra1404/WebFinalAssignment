@@ -1,4 +1,4 @@
-    const jwt =require('jsonwebtoken');
+const jwt =require('jsonwebtoken');
 const CustomerFeedback = require('../models/customerfeedback_model');
     const {findOne} = require('../models/customer_model')  
     const Customer =require('../models/customer_model') 
@@ -10,12 +10,12 @@ const CustomerFeedback = require('../models/customerfeedback_model');
 
         try {
             const token =req.headers.authorization.split(" ")[1]; //token fetch and split
-            const data = jwt.verify(token, 'secretkey')
+            const data1 = jwt.verify(token, 'secretkey')
             // we have id only
            // console.log(data.customerdata._id)
-            Customer.findOne({_id:data.customerdata._id})
+            Customer.findOne({_id:data1.customerdata._id})
             .then (function(result){
-                req.userinfo =result;
+                req.userInfo =result;   // all information about the user (username, password, usertype)
                 next();
 
             })
@@ -37,5 +37,25 @@ const CustomerFeedback = require('../models/customerfeedback_model');
 
 
     module.exports.verifyAdmin = function(req,res,next) {
+        if(!req.userInfo) {
+            return res.status(401).json({message : "invalid Users!"});
+        }
+        else if(req.userInfo.usertype!=='Admin'){
+            return req.status(401).json({message : "Unauthorized!!"})
 
+        }
+        next();
+
+    }
+        // guard for customer .................
+
+        module.exports.verifyCustomer = function(req,res,next) {
+            if(!req.userInfo) {
+                return res.status(401).json({message : "invalid Users!"});
+            }
+            else if(req.userInfo.usertype!=='Customer'){
+                return req.status(401).json({message : "Unauthorized!!"})
+    
+            }
+            next();
     }

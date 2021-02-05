@@ -28,6 +28,11 @@ const Appointment =mongoose.model('Appointment', {
     Description : {
         type : String,
         required : true
+    },
+
+    Custo_id : {
+        type : String,
+        required :true
     }
 })
 

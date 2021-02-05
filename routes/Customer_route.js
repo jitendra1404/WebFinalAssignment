@@ -11,13 +11,13 @@ const jwt =require('jsonwebtoken')
 
 const { find } = require('../models/customer_model');
 const { JsonWebTokenError } = require('jsonwebtoken');
-const auth = require('../middlewear/Auth')
+const auth11 = require('../middlewear/Auth')
 
 
 //insert operation 
 
 
-router.post("/insert",  auth.verifyuser, [ 
+router.post("/insert",  auth11.verifyuser, auth11.verifyCustomer [ 
     check('custo_name', 'Customer Username is required!').not().isEmpty(),
     check('custo_address', 'Customer address is required!').not().isEmpty(),
     check('custo_mobile', 'Customer mobile number is required!').not().isEmpty(),
