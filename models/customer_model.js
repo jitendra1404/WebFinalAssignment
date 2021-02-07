@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const Customer =mongoose.model('Customer', {
+const Customer =mongoose.model('customer', {
 
     custo_name : {
         type : String,

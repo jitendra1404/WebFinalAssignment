@@ -13,19 +13,19 @@ const CustomerFeedback = require('../models/customerfeedback_model');
             const data1 = jwt.verify(token, 'secretkey')
             // we have id only
            // console.log(data.customerdata._id)
-            Customer.findOne({_id:data1.customerdata._id})
+            Customer.findOne({_id:data1.CustomerId})
             .then (function(result){
                 req.userInfo =result;   // all information about the user (username, password, usertype)
                 next();
 
             })
             .catch(function(e){
-                res.status(401).json({Error : e})
+                res.status(401).json({error : e})
             })
 
         }
         catch(e) {
-            res.status(401).json({saroj: e})
+            res.status(401).json({error: e})
         }
       
     
