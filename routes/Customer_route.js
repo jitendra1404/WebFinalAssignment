@@ -2,6 +2,8 @@ const express = require('express');
 const Customer = require('../models/customer_model');
 const router = express.Router();
 
+const upload=require('../middlewear/Upload')
+
 // for our customer data validation
 const {
     check,
@@ -12,13 +14,14 @@ const {
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const auth11 = require('../middlewear/Auth');
+const auth = require('../middlewear/Auth');
 const e = require('express');
+const { json } = require('express');
 
 
 //insert operation 
 
-router.post("/insert", [
+router.post("/insert", upload.single('nimage'),[
     check('custo_name', 'Customer Username is required!').not().isEmpty(),
     check('custo_address', 'Customer address is required!').not().isEmpty(),
     check('custo_mobile', 'Customer mobile number is required!').not().isEmpty(),
@@ -31,20 +34,29 @@ router.post("/insert", [
 
     if (ValidationError.isEmpty()) {
         // valid collection data
+        //console.log(req.file);
+
+        if(req.file==undefined){
+            return res.status(400).json({
+                message:"only jpg and png are allowed"
+            })
+        }
+
         const custo_name = req.body.custo_name;
         const custo_address = req.body.custo_address;
         const custo_mobile = req.body.custo_mobile;
         const custo_email = req.body.custo_email;
         const custo_password = req.body.custo_password;
+        const nimage=req.file.path;
 
         bcryptjs.hash(custo_password, 10, function (error, pw_hash) {
-
 
             const data = new Customer({
                 custo_name: custo_name,
                 custo_address: custo_address,
                 custo_mobile: custo_mobile,
                 custo_email: custo_email,
+                custo_image:nimage,
                 custo_password: pw_hash
             });
             data.save()
@@ -119,8 +131,6 @@ router.put("/update/:custo_id", function (req, res) {
     const custo_password = req.body.custo_password;
     const id = req.params.custo_id;
 
-
-
     Customer.updateOne({
             _id: id
         }, {
@@ -140,8 +150,8 @@ router.put("/update/:custo_id", function (req, res) {
 })
 // for delete
 
-router.delete("/delete/:id", function (req, res) {
-    const id = req.params.id;
+router.delete("/delete/:custo_id", function (req, res) {
+    const id = req.params.custo_id;
     Customer.deleteOne({_id:id}).then(function (result) {
             res.status(200).json({
                 message: "delete"
@@ -152,7 +162,7 @@ router.delete("/delete/:id", function (req, res) {
                 error: e
             })
         })
-
+        
     // for get function 
 
     router.get("/Customer/all", function (req, res) {
@@ -163,10 +173,9 @@ router.delete("/delete/:id", function (req, res) {
             .catch(function (er) {
                 res.status(500).json({
                     error: er
-                })
             })
+        })
     })
-
 })
 
 module.exports = router;
