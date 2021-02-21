@@ -10,7 +10,6 @@ const storage =multer.diskStorage({
     }
 
 })
-
 // now going to filter pdf/file
 
 const filter =function(req,file,cb){

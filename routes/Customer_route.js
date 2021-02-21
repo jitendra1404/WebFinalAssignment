@@ -21,9 +21,8 @@ const { json } = require('express');
 
 //insert operation 
 
-router.post("/insert", upload.single('nimage'),[
+router.post("/register", upload.single('nimage'),[
     check('custo_name', 'Customer Username is required!').not().isEmpty(),
-    check('custo_address', 'Customer address is required!').not().isEmpty(),
     check('custo_mobile', 'Customer mobile number is required!').not().isEmpty(),
     check('custo_password', 'Customer password is required!').not().isEmpty(),
     check('custo_email', 'Customer email is required!').not().isEmpty()
@@ -36,18 +35,18 @@ router.post("/insert", upload.single('nimage'),[
         // valid collection data
         //console.log(req.file);
 
-        if(req.file==undefined){
-            return res.status(400).json({
-                message:"only jpg and png are allowed"
-            })
-        }
+        // if(req.file==undefined){
+        //     return res.status(400).json({
+        //         // message:"only jpg and png are allowed"
+        //     })
+        // }
 
         const custo_name = req.body.custo_name;
         const custo_address = req.body.custo_address;
         const custo_mobile = req.body.custo_mobile;
         const custo_email = req.body.custo_email;
         const custo_password = req.body.custo_password;
-        const nimage=req.file.path;
+        const nimage= "";
 
         bcryptjs.hash(custo_password, 10, function (error, pw_hash) {
 
@@ -62,11 +61,14 @@ router.post("/insert", upload.single('nimage'),[
             data.save()
                 .then().catch(function (result) {
                     res.status(201).json({
-                        message: "Registered!!!"
+                        success: true,
+                        token:token
                     })
                 })
         })
-    } else { // invalid
+    } else { 
+        console.log(ValidationError.array())
+        // invalid
         res.status(400).json(ValidationError.array())
     }
 
@@ -75,13 +77,13 @@ router.post("/insert", upload.single('nimage'),[
 // username - kiran , password - abc
 router.post("/login", function (req, res) {
 
-    const custo_email = req.body.custo_email;
-    const custo_password = req.body.custo_password; // sent from user
+    const custo_name = req.body.username;
+    const custo_password = req.body.password; // sent from user
 
 
     //check user name valid
     Customer.findOne({
-            custo_email: custo_email
+            custo_name: custo_name
         })
         .then(function (customerdata) {
 
@@ -108,9 +110,8 @@ router.post("/login", function (req, res) {
                 }, 'secretkey')
                 res.status(200).json({
                     token: token,
-                    message: "auth sucsess!!"
+                    success: true
                 })
-
 
             })
 

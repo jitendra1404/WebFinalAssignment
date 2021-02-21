@@ -4,14 +4,13 @@ const Customer =mongoose.model('customer', {
 
     custo_name : {
         type : String,
-        required :true,
-        unique :true
+        required :true
         
     },
 
     custo_address : {
-        type:String,
-        required:true
+        type:String
+        
     },
 
     custo_mobile : {
@@ -25,7 +24,8 @@ const Customer =mongoose.model('customer', {
     }, 
     custo_image : {
         type:String,
-        required : true
+        default:"noimage.jpg"
+
     }, 
 
     custo_password : {
