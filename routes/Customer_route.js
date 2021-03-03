@@ -59,17 +59,17 @@ router.post("/register", upload.single('nimage'),[
                 custo_password: pw_hash
             });
             data.save()
-                .then().catch(function (result) {
+                .then(function (result) {
                     res.status(201).json({
                         success: true,
-                        token:token
+                        token: null
                     })
-                })
+                }).catch(err => res.json({message : err.message, success : false}))
         })
     } else { 
         console.log(ValidationError.array())
         // invalid
-        res.status(400).json(ValidationError.array())
+        res.status(400).json({errors : ValidationError.array()})
     }
 
 })
@@ -176,6 +176,7 @@ router.delete("/delete/:custo_id", function (req, res) {
                     error: er
             })
         })
+        
     })
 })
 

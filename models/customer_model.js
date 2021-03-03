@@ -4,7 +4,8 @@ const Customer =mongoose.model('customer', {
 
     custo_name : {
         type : String,
-        required :true
+        required :true,
+        
         
     },
 
