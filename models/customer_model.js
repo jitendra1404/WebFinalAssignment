@@ -5,37 +5,33 @@ const Customer =mongoose.model('customer', {
     custo_name : {
         type : String,
         required :true,
-        
-        
-    },
+        unique:true,
+        trim:true },
 
     custo_address : {
-        type:String
-        
-    },
+        type:String,
+        require:true },
 
     custo_mobile : {
         type:String,
-        required:true
-    },
+        required:true },
 
     custo_email : {
         type:String,
-        required : true
-    }, 
+        required : true },
+
     custo_image : {
         type:String,
         default:"noimage.jpg"
-
     }, 
 
     custo_password : {
         type : String,
         required:true
     }, 
-    usertype : {
+    role : {
         type :String,
-        enum : ['Admin', 'Customer'],
+        enum : ['Admin','Customer'],
         default : 'Customer'
     }
 
