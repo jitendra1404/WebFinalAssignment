@@ -9,6 +9,7 @@ const e = require('express');
 const { json } = require('express');
 const {check,validationResult} = require('express-validator');
 
+//Insert ............
 router.post("/user/register",  upload.single('nimage'),[
     check('custo_name', 'Customer Username is required!').not().isEmpty(),
     check('custo_password', 'Customer password is required!').not().isEmpty(),
@@ -63,14 +64,14 @@ function (req, res) {
 
 router.post("/user/login", function (req, res) {
 
-    const custo_name = req.body.custo_name;
-    const custo_password = req.body.custo_password; // sent from user
+    const custo_name = req.body.username;
+    const custo_password = req.body.password; // sent from user
 
     //find Single Specific user detail 
     Customer.findOne({custo_name: custo_name})
         .then(function (customerdata) {
 
-            if (!customerdata) {
+            if (customerdata===null) {
                 return res.status(403).json({
                     message: "Login Fail!!!"
                 })
@@ -95,9 +96,7 @@ router.post("/user/login", function (req, res) {
             })
 
         }).catch(function (e) {
-            res.status(500).json({
-                Error: e
-        });
+            res.status(500).json({Error: e});
     })
 
 })
@@ -113,7 +112,6 @@ router.post("/user/login", function (req, res) {
                 error: er
         })
     })
-
 })
 
     // get Single user...........
@@ -141,11 +139,13 @@ router.put("/user/update/:custo_id", function (req, res) {
         }, {
             custo_email: custo_email,
             custo_name : custo_name,
-        
+            custo_address:custo_address,
+            custo_mobile:custo_mobile,
+            custo_password:custo_password
         })
         .then(function (result) {
             res.status(200).json({
-                message: "update"
+                message: "Update Successful"
             })
         })
         .catch(function (e) {
@@ -160,7 +160,7 @@ router.delete("/delete/:custo_id", function (req, res) {
     const id = req.params.custo_id;
     Customer.deleteOne({_id:id}).then(function (result) {
             res.status(200).json({
-                message: "delete"
+                message: "Delete Successful"
             })
         })
         .catch(function (e) {
