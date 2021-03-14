@@ -18,15 +18,15 @@ router.post("/user/register",  upload.single('nimage'),[
 function (req, res) {
     const ValidationError = validationResult(req); // collect error data
 
-    if (ValidationError.isEmpty()) { //res.send(ValidationError.array());   // collecting error folder
+    if (ValidationError.isEmpty()) { res.send(ValidationError.array());   // collecting error folder
         // valid collection data
-        //console.log(req.file);
+        console.log(req.file);
 
-        // if(req.file==undefined){
-        //     return res.status(400).json({
-        //         // message:"only jpg and png are allowed"
-        //     })
-        // }
+         if(req.file==undefined){
+             return res.status(400).json({
+                 message:"only jpg and png are allowed"
+            })
+         }
 
         const custo_name = req.body.custo_name;
         const custo_address = req.body.custo_address;
