@@ -18,15 +18,15 @@ router.post("/user/register",  upload.single('nimage'),[
 function (req, res) {
     const ValidationError = validationResult(req); // collect error data
 
-    if (ValidationError.isEmpty()) { res.send(ValidationError.array());   // collecting error folder
+    if (ValidationError.isEmpty()) { //res.send(ValidationError.array());   // collecting error folder
         // valid collection data
-        console.log(req.file);
+        //console.log(req.file);
 
-         if(req.file==undefined){
-             return res.status(400).json({
-                 message:"only jpg and png are allowed"
-            })
-         }
+        // if(req.file==undefined){
+        //     return res.status(400).json({
+        //         // message:"only jpg and png are allowed"
+        //     })
+        // }
 
         const custo_name = req.body.custo_name;
         const custo_address = req.body.custo_address;
@@ -64,11 +64,11 @@ function (req, res) {
 
 router.post("/user/login", function (req, res) {
 
-    const custo_name = req.body.username;
-    const custo_password = req.body.password; // sent from user
+    const custo_name = req.body.custo_name;
+    const custo_password = req.body.custo_password; // sent from user
 
     //find Single Specific user detail 
-    Customer.findOne({custo_name: custo_name})
+    Customer.findOne({custo_name : custo_name})
         .then(function (customerdata) {
 
             if (customerdata===null) {
