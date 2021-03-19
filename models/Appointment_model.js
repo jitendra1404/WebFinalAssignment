@@ -20,7 +20,17 @@ const Appointment =mongoose.model('Appointment', {
         required : true 
     },
 
-    appointment_type : {
+    custo_name : {
+        type : String,
+        required : true
+    },
+
+    custo_mobile : {
+        type : String,
+        required : true
+    },
+    
+    custo_address : {
         type : String,
         required : true
     },
@@ -32,7 +42,12 @@ const Appointment =mongoose.model('Appointment', {
 
     Custo_id : {
         type : String,
-        required :true
+        default:"no custo_id"
+    },
+    role : {
+        type :String,
+        enum : ['Admin','Customer'],
+        default : 'Customer'
     }
 })
 
