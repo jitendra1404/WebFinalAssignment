@@ -1,5 +1,5 @@
 const jwt =require('jsonwebtoken');
-const CustomerFeedback = require('../models/customerfeedback_model');
+const Review = require('../models/Review_model');
     const {findOne} = require('../models/customer_model')  
     const Customer =require('../models/customer_model') 
     
