@@ -1,7 +1,8 @@
 const jwt =require('jsonwebtoken');
 const Review = require('../models/Review_model');
-    const {findOne} = require('../models/customer_model')  
-    const Customer =require('../models/customer_model') 
+const Product =require('../models/Product_model')
+const {findOne} = require('../models/customer_model')  
+const Customer =require('../models/customer_model') 
     
     
 // main ..................guard

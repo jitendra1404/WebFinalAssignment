@@ -26,14 +26,12 @@ const Appointment =mongoose.model('Appointment', {
         required : true
     },
 
-    Description : {
+    Issue : {
         type : String,
-        required : true
-    },
+        required : true,
+        minlength:10,
+        maxlength:200,
 
-    Custo_id : {
-        type : String,
-        default:"no custo_id"
     },
     role : {
         type :String,
