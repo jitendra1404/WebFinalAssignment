@@ -5,7 +5,8 @@ const Appointment =mongoose.model('Appointment', {
     device_name : {
 
         type :String,
-        require : true
+        require : true,
+        trim:true,
     },
 
     device_model : {
@@ -16,21 +17,11 @@ const Appointment =mongoose.model('Appointment', {
 
     appointment_date : {
 
-        type : String,
-        required : true 
-    },
-
-    custo_name : {
-        type : String,
-        required : true
-    },
-
-    custo_mobile : {
-        type : String,
-        required : true
+        type : Date,
+        default:Date.now
     },
     
-    custo_address : {
+    Location : {
         type : String,
         required : true
     },

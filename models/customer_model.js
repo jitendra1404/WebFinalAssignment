@@ -20,11 +20,6 @@ const Customer =mongoose.model('customer', {
         type:String,
         required : true },
 
-    custo_image : {
-        type:String,
-        default:"noimage.jpg"
-    }, 
-
     custo_password : {
         type : String,
         required:true

@@ -34,7 +34,7 @@ function (req, res) {
         const custo_email = req.body.custo_email;
         const custo_password = req.body.custo_password;
         const role = req.body.role
-        const nimage= "";
+    
 
         bcryptjs.hash(custo_password, 10, function (error, pw_hash) {
 
@@ -43,7 +43,6 @@ function (req, res) {
                 custo_address: custo_address,
                 custo_mobile: custo_mobile,
                 custo_email: custo_email,
-                custo_image:nimage,
                 role:role,
                 custo_password: pw_hash
             });

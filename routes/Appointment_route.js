@@ -4,21 +4,19 @@ const router=express.Router();
 
 
 router.post("/Appointment/insert6", function(req,res) {
-
- const custo_name =req.body.custo_name;
- const custo_mobile =req.body.custo_mobile;
- const custo_address =req.body.custo_address;   
+   
 const device_name =req.body.device_name;
 const device_model =req.body.device_model;
 const appointment_date =req.body.appointment_date;
-const Description =req.body.Description;
+const Location =req.body.Location;
+const Description =req.body.Description
 const role =req.body.role
 const custo_id = "";
 
-const Appointmentdata = new Appointment({custo_name:custo_name, custo_id:custo_id,
-     custo_mobile:custo_mobile, custo_address:custo_address,
+const Appointmentdata = new Appointment({ custo_id:custo_id,
+     Description:Description,
      device_name:device_name,device_model:device_model,
-     appointment_date:appointment_date, Description:Description, role:role});
+     appointment_date:appointment_date, Location:Location, role:role});
 Appointmentdata.save();
 })
 
