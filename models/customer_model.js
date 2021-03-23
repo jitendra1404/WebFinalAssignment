@@ -14,11 +14,16 @@ const Customer =mongoose.model('customer', {
 
     custo_mobile : {
         type:String,
-        required:true },
+        required:true,
+        min:9,
+        max:10
+     },
 
     custo_email : {
         type:String,
-        required : true },
+        required : true,
+        lowercase:true
+     },
 
     custo_password : {
         type : String,

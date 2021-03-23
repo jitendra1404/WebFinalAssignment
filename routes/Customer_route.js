@@ -83,7 +83,6 @@ router.post("/user/login", function (req, res) {
                         message: " Invalid Userdetail!!!"
                     })
                 }
-
                 const token = jwt.sign({    //  username and password is valid //token generate
                     customerId: customerdata._id
                 }, 'secretkey')

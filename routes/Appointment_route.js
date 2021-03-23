@@ -2,7 +2,6 @@ const express =require('express')
 const Appointment =require('../models/Appointment_model');
 const router=express.Router();
 
-
 router.post("/Appointment/insert6", function(req,res) {
    
 const device_name =req.body.device_name;
@@ -16,7 +15,12 @@ const Appointmentdata = new Appointment({ custo_id:custo_id,
      Issue:Issue,
      device_name:device_name,device_model:device_model,
      appointment_date:appointment_date, Location:Location, role:role});
-Appointmentdata.save();
+Appointmentdata.save()
+.then(function(result){
+    res.status(201).json({success:true, message:"Appointment Insert Success"})
+}).catch(function(e){
+    res.status(500).json({message:e, success:false})
+})
 })
 
 router.get("/Appointment/All", function(req,res){
@@ -34,7 +38,7 @@ router.get("/Appointment/:custo_id", function(req, res) {
          res.status(200).json(result);
      })
      .catch(function(er){
-     res.status(200) .json({error:er})
+     res.status(500) .json({error:er})
      })
  })
 

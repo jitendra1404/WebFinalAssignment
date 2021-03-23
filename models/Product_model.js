@@ -1,6 +1,6 @@
 const mongoose =require('mongoose')
 
-const Product =mongoose.model('Product', {
+const Product = mongoose.model('Product', {
 
     Product_name :{
         type:String,
@@ -29,16 +29,10 @@ const Product =mongoose.model('Product', {
         maxlength:100
     },
 
-    Product_image:{
+ImageUrl:{
         type:String,
         require:true
     },
-    
-    role_type : {
-        type :String,
-        enum : ['Admin','Customer'],
-        default : 'Admin'
-    }
 })
 
 module.exports = Product;
