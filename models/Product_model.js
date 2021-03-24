@@ -7,6 +7,7 @@ const Product = mongoose.model('Product', {
         require:true,
         trim:true
     },
+    
     Product_price :{
         type:Number,
         require:true

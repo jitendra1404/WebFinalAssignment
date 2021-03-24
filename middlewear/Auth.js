@@ -36,7 +36,6 @@ const Customer =require('../models/customer_model')
 
     // second...............guard for admin
 
-
     module.exports.verifyAdmin = function(req,res,next) {
         if(!req.userInfo) {
             return res.status(401).json({message : "invalid Users!"});

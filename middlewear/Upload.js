@@ -21,7 +21,6 @@ const filter =function(req,file,cb){
     }
 
 }
-    
 const upload =multer({
     storage:storage,
     fileFilter:filter

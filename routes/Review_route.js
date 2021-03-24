@@ -1,19 +1,18 @@
-const { json } = require('express');
 const express =require('express')
 const Review =require('../models/Review_model');
-const { route } = require('./Product_route');
-const router=express.Router();
+const router=express.Router();;
 
-router.post("/Review/insert66", function(req,res) {
-
-const feed_title = req.body.feed_title;
-const feed_discription =req.body.feed_discription;
+router.post("/Review/insert66", 
+function(req,res) {
+      
+const feedback_title = req.body.feedback_title;
+const feedback_discription =req.body.feedback_discription;
 const custo_name = req.body.custo_name;
 
 const ReviewData = new Review({
-    feedback_title:feed_title, 
+    feedback_title:feedback_title, 
     custo_name:custo_name,
-    feedback_discrption:feed_discription});
+    feedback_discrption:feedback_discription});
 ReviewData.save()
 .then(function(result){
     res.status(201).json({success:true, message:"Review Insert Success"})

@@ -66,7 +66,7 @@ router.put("/Product/update/:custo_id", function(req,res){
    const ImageUrl =req.file.path;
    const id =req.params.custo_id;
 
-   Product.updateOne({_id: id}, {
+   Product.findOne({_id: id}, {
 
        Product_name:Product_name,
        Product_price:Product_price,
@@ -74,7 +74,6 @@ router.put("/Product/update/:custo_id", function(req,res){
        Product_item:Product_item,
        Product_info:Product_info,
        ImageUrl:ImageUrl
-
    })
    .then(function(result) {
        res.status(200).json({message: "Product Update Success"})
@@ -82,6 +81,15 @@ router.put("/Product/update/:custo_id", function(req,res){
    .catch(function(error){
        res.status(500).json({error:error})
    })
+})
+
+router.delete("/Product/delete/:custo_id", function(req,res){
+    const id =req.params.custo_id;
+Product.deleteOne({_id:id}).then(function(result){
+    res.status(200).json({message:"Product Delete Success"})
+}).catch(function (error){
+    res.status(500).json({error:error})
+})
 })
 
 module.exports=router;
