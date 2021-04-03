@@ -26,6 +26,7 @@ router.post("/Product/insert",  upload.single('ImageUrl'),
    const ProductData = new Product({
        Product_name:Product_name,
        Product_price:Product_price,
+       product_weight:product_weight,
        Product_model:Product_model,
        Product_item:Product_item,
        Product_info:Product_info,
