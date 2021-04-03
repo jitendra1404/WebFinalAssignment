@@ -29,7 +29,14 @@ const Product = mongoose.model('Product', {
         mixlength:10,
         maxlength:100
     },
-    
+    product_weight:{
+        type:String,
+        require:true
+    },
+    memory_size:{
+        type:String,
+        require:true
+    },   
 ImageUrl:{
         type:String,
         require:true
