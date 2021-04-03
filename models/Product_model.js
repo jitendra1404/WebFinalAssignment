@@ -36,7 +36,12 @@ const Product = mongoose.model('Product', {
     memory_size:{
         type:String,
         require:true
-    },   
+    },  
+    display_size:{
+        type:String,
+        require:true
+    },
+    
 ImageUrl:{
         type:String,
         require:true
