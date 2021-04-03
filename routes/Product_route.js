@@ -80,6 +80,7 @@ router.put("/Product/update/:custo_id", function(req,res){
        Product_model:Product_model,
        Product_item:Product_item,
        product_weight:product_weight,
+       memory_size,
        Product_info:Product_info,
        ImageUrl:ImageUrl
    })
