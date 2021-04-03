@@ -14,7 +14,7 @@ const Product = mongoose.model('Product', {
     },
 
     Product_item :{
-        type :Number,
+        type :String,
         require:true
     },
 
@@ -29,7 +29,7 @@ const Product = mongoose.model('Product', {
         mixlength:10,
         maxlength:100
     },
-    product_weight:{
+    Product_weight:{
         type:String,
         require:true
     },
@@ -41,7 +41,7 @@ const Product = mongoose.model('Product', {
         type:String,
         require:true
     },
-    
+
 ImageUrl:{
         type:String,
         require:true
