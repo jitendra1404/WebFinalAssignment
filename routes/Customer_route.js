@@ -10,7 +10,7 @@ const { json } = require('express');
 const {check,validationResult} = require('express-validator');
 
 //Insert ............
-router.post("/user/register",  upload.single('nimage'),[
+router.post("/user/register", [
     check('custo_name', 'Customer Username is required!').not().isEmpty(),
     check('custo_password', 'Customer password is required!').not().isEmpty(),
    
@@ -88,7 +88,8 @@ router.post("/user/login", function (req, res) {
                 }, 'secretkey')
                 res.status(200).json({
                     token: token,
-                    success: true
+                    success: true,
+                    usertype:customerdata.role
                 })
 
             })
@@ -131,6 +132,7 @@ router.put("/user/update/:custo_id", function (req, res) {
     const custo_mobile = req.body.custo_mobile;
     const custo_email = req.body.custo_email;
     const custo_password = req.body.custo_password;
+    const role =req.body.role;
     const id = req.params.custo_id;
 
     Customer.updateOne({ _id: id
@@ -139,6 +141,7 @@ router.put("/user/update/:custo_id", function (req, res) {
             custo_name : custo_name,
             custo_address:custo_address,
             custo_mobile:custo_mobile,
+            role:role,
             custo_password:custo_password
         })
         .then(function (result) {

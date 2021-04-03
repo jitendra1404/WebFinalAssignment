@@ -1,10 +1,10 @@
-const express =require('express')
+const express =require('express');
 const Review =require('../models/Review_model');
 const router=express.Router();;
 
 router.post("/Review/insert66", 
-function(req,res) {
-      
+function(req, res) {
+
 const feedback_title = req.body.feedback_title;
 const feedback_discription =req.body.feedback_discription;
 const custo_name = req.body.custo_name;
@@ -63,7 +63,8 @@ router.delete("/Review/delete/:custo_id", function(req ,res){
     const id =req.params.custo_id;
     Review.deleteOne({_id:id}, function(result){
         res.status(200).json({message:"Review Delete Success"})
-    }).catch(function(error){
+    })
+    .catch(function(error){
         res.status(500).json({error:error})
     })
 })

@@ -9,12 +9,12 @@ const device_model =req.body.device_model;
 const appointment_date =req.body.appointment_date;
 const Location =req.body.Location;
 const Issue =req.body.Issue
-const role =req.body.role
 
-const Appointmentdata = new Appointment({ custo_id:custo_id,
+
+const Appointmentdata = new Appointment({
      Issue:Issue,
      device_name:device_name,device_model:device_model,
-     appointment_date:appointment_date, Location:Location, role:role});
+     appointment_date:appointment_date, Location:Location});
 Appointmentdata.save()
 .then(function(result){
     res.status(201).json({success:true, message:"Appointment Insert Success"})

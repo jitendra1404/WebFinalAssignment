@@ -32,12 +32,8 @@ const Appointment =mongoose.model('Appointment', {
         minlength:10,
         maxlength:200,
 
-    },
-    role : {
-        type :String,
-        enum : ['Admin','Customer'],
-        default : 'Customer'
     }
+   
 })
 
 module.exports = Appointment;

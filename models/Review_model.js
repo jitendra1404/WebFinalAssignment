@@ -15,9 +15,5 @@ const Review =mongoose.model('Review', {
         type:String,
         require:true
     },
-    ImageUrl:{
-        type:String,
-        require:true
-    },
 })
  module.exports=Review;

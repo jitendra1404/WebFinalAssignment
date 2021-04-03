@@ -29,7 +29,6 @@ const Product = mongoose.model('Product', {
         mixlength:10,
         maxlength:100
     },
-
 ImageUrl:{
         type:String,
         require:true

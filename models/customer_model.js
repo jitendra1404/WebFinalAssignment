@@ -32,7 +32,7 @@ const Customer =mongoose.model('customer', {
     role : {
         type :String,
         enum : ['Admin','Customer'],
-        default : 'Customer'
+        default : 'Admin'
     }
 
 })
