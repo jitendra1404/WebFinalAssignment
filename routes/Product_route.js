@@ -20,7 +20,7 @@ router.post("/Product/insert",  upload.single('ImageUrl'),
    const Product_item=req.body.Product_item;
    const Product_info=req.body.Product_info;
    const product_weight=req.body.product_weight;
-   const memory_size
+   const memory_size=req.body.memory_size;
    const ImageUrl =req.file.path;
    
    const ProductData = new Product({
