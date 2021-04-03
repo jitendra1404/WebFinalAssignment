@@ -4,6 +4,7 @@ const upload=require('../middlewear/Upload');
 const auth = require('../middlewear/Auth');
 const {verifyuser, verifyAdmin} = require('../middlewear/Auth');
 const { single } = require('../middlewear/Upload');
+const { body } = require('express-validator');
 const router =express.Router();
 
 router.post("/Product/insert",  upload.single('ImageUrl'),
@@ -18,6 +19,7 @@ router.post("/Product/insert",  upload.single('ImageUrl'),
    const Product_model=req.body.Product_model;
    const Product_item=req.body.Product_item;
    const Product_info=req.body.Product_info;
+   const product_weight=req.body.product_weight;
    const ImageUrl =req.file.path;
    
    const ProductData = new Product({
