@@ -67,6 +67,7 @@ router.put("/Product/update/:custo_id", function(req,res){
    const Product_price=req.body.Product_price;
    const Product_model=req.body.Product_model;
    const Product_item=req.body.Product_item;
+   const product_weight
    const Product_info=req.body.Product_info;
    const ImageUrl =req.file.path;
    const id =req.params.custo_id;
