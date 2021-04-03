@@ -17,20 +17,20 @@ router.post("/Product/insert",  upload.single('ImageUrl'),
    const Product_name=req.body.Product_name;
    const Product_price=req.body.Product_price;
    const Product_model=req.body.Product_model;
-   const Product_item=req.body.Product_item;
-   const Product_info=req.body.Product_info;
-   const product_weight=req.body.product_weight;
-   const display_size=req.body.display_size;
-   const memory_size=req.body.memory_size;
+   const Product_item =req.body.Product_item;
+   const Product_info =req.body.Product_info;
+   const Product_weight=req.body.Product_weight;
+   const Display_size=req.body.Display_size;
+   const Memory_size=req.body.Memory_size;
    const ImageUrl =req.file.path;
    
    const ProductData = new Product({
        Product_name:Product_name,
        Product_price:Product_price,
-       product_weight:product_weight,
+       Product_weight:Product_weight,
        Product_model:Product_model,
-       memory_size:memory_size,
-       display_size:display_size,
+       Memory_size:Memory_size,
+       Display_size:Display_size,
        Product_item:Product_item,
        Product_info:Product_info,
        ImageUrl:ImageUrl,
