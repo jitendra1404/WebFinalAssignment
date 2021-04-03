@@ -79,6 +79,7 @@ router.put("/Product/update/:custo_id", function(req,res){
        Product_price:Product_price,
        Product_model:Product_model,
        Product_item:Product_item,
+       product_weight,
        Product_info:Product_info,
        ImageUrl:ImageUrl
    })
