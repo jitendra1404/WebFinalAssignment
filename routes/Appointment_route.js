@@ -7,14 +7,14 @@ router.post("/Appointment/insert6", function(req,res) {
 const device_name =req.body.device_name;
 const device_model =req.body.device_model;
 const appointment_date =req.body.appointment_date;
-const Location =req.body.Location;
-const Issue =req.body.Issue
+const location =req.body.location;
+const issue =req.body.issue
 
 
 const Appointmentdata = new Appointment({
-     Issue:Issue,
+     issue:issue,
      device_name:device_name,device_model:device_model,
-     appointment_date:appointment_date, Location:Location});
+     appointment_date:appointment_date, location:location});
 Appointmentdata.save()
 .then(function(result){
     res.status(201).json({success:true, message:"Appointment Insert Success"})
@@ -49,18 +49,18 @@ router.get("/Appointment/:custo_id", function(req, res) {
     const device_name =req.body.device_name;
     const device_model =req.body.device_model;
     const appointment_date =req.body.appointment_date;
-    const Location =req.body.Location;
-    const Issue =req.body.Issue
+    const location =req.body.location;
+    const issue =req.body.issue
     const id = req.params.custo_id;
  
      Appointment.updateOne({ _id: id
          }, {
            
-            Location: Location,
+            location: location,
             device_name:device_name,
             device_model:device_model,
             appointment_date:appointment_date,
-            Issue:Issue
+            issue:issue
 
          })
          .then(function (result) {

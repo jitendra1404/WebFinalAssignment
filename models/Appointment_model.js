@@ -21,7 +21,7 @@ const Appointment =mongoose.model('Appointment', {
         default:Date.now
     },
     
-    Location : {
+    location : {
         type : String,
         required : true
     },
