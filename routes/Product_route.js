@@ -69,22 +69,22 @@ router.put("/Product/update/:custo_id", function(req,res){
    const Product_price=req.body.Product_price;
    const Product_model=req.body.Product_model;
    const Product_item=req.body.Product_item;
-   const product_weight=req.body.product_weight;
-   const memory_size=req.body.memory_size;
-   const display_size=req.body.memory_size;
+   const Product_weight=req.body.Product_weight;
+   const Memory_size=req.body.Memory_size;
+   const Display_size=req.body.Display_size;
    const Product_info=req.body.Product_info;
    const ImageUrl =req.file.path;
    const id =req.params.custo_id;
 
-   Product.findOne({_id: id}, {
+   Product.updateOne({_id: id}, {
 
        Product_name:Product_name,
        Product_price:Product_price,
        Product_model:Product_model,
        Product_item:Product_item,
-       product_weight:product_weight,
-       memory_size:memory_size,
-       display_size:display_size,
+       Product_weight:Product_weight,
+       Memory_size:Memory_size,
+       Display_size:Display_size,
        Product_info:Product_info,
        ImageUrl:ImageUrl
    })

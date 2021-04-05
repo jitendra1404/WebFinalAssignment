@@ -33,11 +33,11 @@ const Product = mongoose.model('Product', {
         type:String,
         require:true
     },
-    memory_size:{
+    Memory_size:{
         type:String,
         require:true
     },  
-    display_size:{
+    Display_size:{
         type:String,
         require:true
     },
