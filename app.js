@@ -18,7 +18,5 @@ app.use(Review_route);
 app.use(Appointment_route);
 app.use(Product_route)
 app.use(Images_route)
-app.listen(90, () => {
-    console.log("The server is running on port : 90")
-} );
+app.listen(90);
 
