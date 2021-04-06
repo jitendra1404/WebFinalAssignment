@@ -2,25 +2,31 @@ const express =require('express')
 const Appointment =require('../models/Appointment_model');
 const router=express.Router();
 
-router.post("/Appointment/insert6", function(req,res) {
-   
+//Appointment insert........
+router.post("/Appointment/insert",  function(req,res) {
+
 const device_name =req.body.device_name;
 const device_model =req.body.device_model;
 const appointment_date =req.body.appointment_date;
 const location =req.body.location;
 const issue =req.body.issue
 
-
 const Appointmentdata = new Appointment({
-     issue:issue,
-     device_name:device_name,device_model:device_model,
-     appointment_date:appointment_date, location:location});
+     device_name:device_name,
+     device_model:device_model,
+     appointment_date:appointment_date, 
+     location:location,
+     issue:issue
+    });
+
 Appointmentdata.save()
 .then(function(result){
-    res.status(201).json({success:true, message:"Appointment Insert Success"})
-}).catch(function(e){
-    res.status(500).json({message:e, success:false})
-})
+    res.status(201).json({
+        success:true, 
+        message:"Appointment Insert Success"})
+}).catch(function(e)
+{res.status(500).json({message:e, success:false})
+    })
 })
 
 router.get("/Appointment/All", function(req,res){
@@ -39,8 +45,8 @@ router.get("/Appointment/:custo_id", function(req, res) {
      })
      .catch(function(er){
      res.status(500) .json({error:er})
-     })
- })
+     });
+ });
 
  // For Appointment update
 
@@ -55,13 +61,11 @@ router.get("/Appointment/:custo_id", function(req, res) {
  
      Appointment.updateOne({ _id: id
          }, {
-           
             location: location,
             device_name:device_name,
             device_model:device_model,
             appointment_date:appointment_date,
             issue:issue
-
          })
          .then(function (result) {
              res.status(200).json({

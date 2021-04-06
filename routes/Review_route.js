@@ -1,6 +1,6 @@
 const express =require('express');
 const Review =require('../models/Review_model');
-const router=express.Router();;
+const router=express.Router();
 
 router.post("/Review/insert66", 
 function(req, res) {

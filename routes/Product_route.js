@@ -73,7 +73,7 @@ router.put("/Product/update/:custo_id", function(req,res){
    const Memory_size=req.body.Memory_size;
    const Display_size=req.body.Display_size;
    const Product_info=req.body.Product_info;
-//    const ImageUrl =req.file.path;
+   const ImageUrl =req.file.path;
    const id =req.params.custo_id;
 
    Product.updateOne({_id: id}, {
@@ -86,7 +86,7 @@ router.put("/Product/update/:custo_id", function(req,res){
        Memory_size:Memory_size,
        Display_size:Display_size,
        Product_info:Product_info,
-    //    ImageUrl:ImageUrl
+       ImageUrl:ImageUrl
    })
    .then(function(result) {
        res.status(200).json({success :true, message: "Product Update Success"})

@@ -3,35 +3,31 @@ const mongoose =require('mongoose');
 const Appointment =mongoose.model('Appointment', {
 
     device_name : {
-
         type :String,
-        require : true,
+        require:true,
         trim:true,
     },
 
     device_model : {
-
         type :String, 
-        required : true
+        require:true
     },
 
     appointment_date : {
-
         type : Date,
         default:Date.now
     },
     
     location : {
         type : String,
-        required : true
+        require:true   
     },
 
-    Issue : {
+    issue : {
         type : String,
-        required : true,
+        require:true,
         minlength:10,
         maxlength:200,
-
     }
    
 })

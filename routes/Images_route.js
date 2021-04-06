@@ -45,9 +45,9 @@ router.get("/Image/:custo_id", function(req,res){
     })
 })
 
-router.put("/Image/update/:custo_id", function(req,res){
+router.put("/update/:custo_id", function(req,res){
     const image_name=req.body.image_name;   
-    const Profile =req.file.path;
+    const Profile = req.file.path;
     const id =req.params.custo_id;
 
     Image.findOne({_id:id}, {
