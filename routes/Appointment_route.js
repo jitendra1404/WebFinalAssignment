@@ -1,5 +1,6 @@
 const express =require('express')
 const Appointment =require('../models/Appointment_model');
+const Customer = require('../models/customer_model');
 const router=express.Router();
 
 //Appointment insert........
@@ -29,14 +30,27 @@ Appointmentdata.save()
     })
 })
 
-router.get("/Appointment/All", function(req,res){
-     Appointment.find().then(function(data){
-          res.status(200).json(data);
-     })
-     .catch(function(error){
-          res.status(500).json({error:error})
-     })
-})
+router.get ("/Appointment/All", async(req,res) => {
+    const appointment = await Appointment.find({});
+    try {
+        res.status(201).send(appointment);
+    } catch(error) {
+        res.status(500).send(error);
+    }
+});
+
+
+
+
+
+// router.get("/Appointment/All", function(req,res){
+//      Appointment.find().then(function(data){
+//           res.status(200).json(data);
+//      })
+//      .catch(function(error){
+//           res.status(500).json({error:error})
+//      })
+// })
 
 router.get("/Appointment/:custo_id", function(req, res) {
      const id = req.params.custo_id;
