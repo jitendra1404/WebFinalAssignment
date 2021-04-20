@@ -70,6 +70,5 @@ router.delete("/Review/delete/:custo_id", function(req ,res){
     })
 })
 
-// change in review panel 
 
 module.exports=router;
