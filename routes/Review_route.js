@@ -70,5 +70,6 @@ router.delete("/Review/delete/:custo_id", function(req ,res){
     })
 })
 
+// change in customer login and registration
 
 module.exports=router;
