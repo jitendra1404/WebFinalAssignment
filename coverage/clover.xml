@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617695941994" clover="3.2.0">
-  <project timestamp="1617695941994" name="All files">
-    <metrics statements="195" coveredstatements="105" conditionals="19" coveredconditionals="4" methods="63" coveredmethods="14" elements="277" coveredelements="123" complexity="0" loc="195" ncloc="195" packages="4" files="10" classes="10"/>
+<coverage generated="1618935441348" clover="3.2.0">
+  <project timestamp="1618935441348" name="All files">
+    <metrics statements="198" coveredstatements="107" conditionals="19" coveredconditionals="4" methods="61" coveredmethods="14" elements="278" coveredelements="125" complexity="0" loc="198" ncloc="198" packages="4" files="10" classes="10"/>
     <package name="middlewear">
       <metrics statements="36" coveredstatements="13" conditionals="13" coveredconditionals="0" methods="8" coveredmethods="0"/>
       <file name="Auth.js" path="I:\Web Assignment Submission\Onlinelaptop-PC_repair_system\middlewear\Auth.js">
@@ -69,53 +69,55 @@
       </file>
       <file name="customer_model.js" path="I:\Web Assignment Submission\Onlinelaptop-PC_repair_system\models\customer_model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
       </file>
     </package>
     <package name="routes">
-      <metrics statements="136" coveredstatements="71" conditionals="6" coveredconditionals="4" methods="50" coveredmethods="10"/>
+      <metrics statements="139" coveredstatements="73" conditionals="6" coveredconditionals="4" methods="48" coveredmethods="10"/>
       <file name="Appointment_route.js" path="I:\Web Assignment Submission\Onlinelaptop-PC_repair_system\routes\Appointment_route.js">
-        <metrics statements="38" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="2"/>
+        <metrics statements="40" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
-        <line num="83" count="1" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
         <line num="97" count="1" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
       </file>
       <file name="Customer_route.js" path="I:\Web Assignment Submission\Onlinelaptop-PC_repair_system\routes\Customer_route.js">
         <metrics statements="64" coveredstatements="39" conditionals="6" coveredconditionals="4" methods="20" coveredmethods="6"/>
@@ -185,7 +187,7 @@
         <line num="174" count="1" type="stmt"/>
       </file>
       <file name="Review_route.js" path="I:\Web Assignment Submission\Onlinelaptop-PC_repair_system\routes\Review_route.js">
-        <metrics statements="34" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="2"/>
+        <metrics statements="35" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -196,30 +198,31 @@
         <line num="12" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="72" count="1" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
       </file>
     </package>
     <package name="testing">
