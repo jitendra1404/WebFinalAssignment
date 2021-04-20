@@ -114,7 +114,7 @@ router.post("/user/login", function (req, res) {
 })
 
     // get Single user...........
-    router.get("/Customer/:custo_id", function(req, res) {
+    router.get("/Customer/single/:custo_id", function(req, res) {
         const id = req.params.custo_id;
         Customer.findOne({_id:id}).then (function(result){
             res.status(200).json(result);

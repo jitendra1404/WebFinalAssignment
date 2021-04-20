@@ -15,6 +15,7 @@ const ReviewData = new Review({
     feedback_discrption:feedback_discription});
 ReviewData.save()
 .then(function(result){
+    console.log(result)
     res.status(201).json({success:true, message:"Review Insert Success"})
 }).catch(function(e){
     res.status(500).json({message:e, success:false})
